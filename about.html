@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CoE STAR</title>
+    
+    <!-- Load CSS dalam urutan yang sama dengan index.html -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    
+    <style>
+        :root {
+            --primary-gray: #495057;
+            --secondary-gray: #6c757d;
+            --light-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --medium-gray: #adb5bd;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .main-content {
+            padding: 2rem 0;
+            margin-top: 80px; /* Memberikan ruang untuk header */
+        }
+        
+        .info-card {
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            background: #ffffff !important;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(73, 80, 87, 0.15) !important;
+            border-color: var(--primary-gray);
+        }
+        
+        .text-primary {
+            color: var(--primary-gray) !important;
+        }
+        
+        .expertise-item {
+            background: var(--light-gray) !important;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .expertise-item:hover {
+            background: var(--primary-gray) !important;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(73, 80, 87, 0.2);
+        }
+        
+        .expertise-item:hover i {
+            color: white !important;
+        }
+        
+        .expertise-item i {
+            color: var(--primary-gray) !important;
+            font-size: 1.5rem;
+        }
+        
+        .lead {
+            color: var(--dark-gray);
+        }
+        
+        .text-muted {
+            color: var(--secondary-gray) !important;
+        }
+        
+        .bg-light {
+            background-color: var(--light-gray) !important;
+        }
+        
+        .shadow-sm {
+            box-shadow: 0 2px 10px rgba(73, 80, 87, 0.08) !important;
+        }
+        
+        h2, h4 {
+            color: var(--primary-gray) !important;
+        }
+        
+        .fas, .fa {
+            color: var(--primary-gray);
+        }
+        
+        /* Custom hover effects */
+        .info-card .fas {
+            transition: all 0.3s ease;
+        }
+        
+        .info-card:hover .fas {
+            color: var(--dark-gray) !important;
+            transform: scale(1.1);
+        }
+        
+        /* Enhanced styling for focus areas */
+        .focus-section {
+            background: linear-gradient(45deg, var(--light-gray), #f8f9fa);
+            border-left: 4px solid var(--primary-gray);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Enhanced phone number styling */
+        .contact-info {
+            background: var(--light-gray);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-gray);
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header"></div>
+    
+    <div class="about-content main-content">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Leader Card -->
+                <div class="col-12">
+                    <div class="info-card h-100 p-4 bg-white shadow-sm rounded-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-tie fs-2 me-3 text-primary"></i>
+                            <h2 class="h3 mb-0 text-primary">Leader</h2>
+                        </div>
+                        <div class="ps-5">
+                            <p class="lead mb-3 fw-semibold">Dr. Eng. Ahmad Sugiana</p>
+                            <div class="contact-info">
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-phone me-2"></i>
+                                    +6281320429546
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description Card -->
+                <div class="col-12">
+                    <div class="info-card h-100 p-4 bg-white shadow-sm rounded-3">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-info-circle fs-2 me-3 text-primary"></i>
+                            <h2 class="h3 mb-0 text-primary">Description</h2>
+                        </div>
+                        <div class="ps-5">
+                            <p class="mb-0 text-justify" style="line-height: 1.7; color: var(--dark-gray);">
+                                The Center of Excellence (CoE) for Smart Transportation and Robotics (STAR) at Telkom University acts as a center of excellence in conducting in-depth studies and research related to the latest developments in transportation (automotive, train, ship, plane) and robotics. Research related to Intelligent Transportation, signaling, Telecommunications, Power Systems, Train Control, Operations and Robotics. This CoE is not only committed to producing innovative knowledge but also providing a broad positive impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Focus Area Card -->
+                <div class="col-12">
+                    <div class="info-card h-100 p-4 bg-white shadow-sm rounded-3">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-bullseye fs-2 me-3 text-primary"></i>
+                            <h2 class="h3 mb-0 text-primary">Focus Area & Sub Focus Area</h2>
+                        </div>
+                        <div class="ps-5">
+                            <div class="focus-section mb-4">
+                                <h4 class="h5 text-primary mb-2">
+                                    <i class="fas fa-arrow-right me-2"></i>Main Focus:
+                                </h4>
+                                <p class="lead mb-0 ps-4" style="color: var(--dark-gray);">Connectivity and Convergence for Smart Living</p>
+                            </div>
+                            <div class="focus-section">
+                                <h4 class="h5 text-primary mb-2">
+                                    <i class="fas fa-arrow-right me-2"></i>Sub Focus:
+                                </h4>
+                                <p class="lead mb-0 ps-4" style="color: var(--dark-gray);">Smart System and Application, Advanced Mobility, Logistic & Supply-Chain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expertise Card -->
+                <div class="col-12">
+                    <div class="info-card h-100 p-4 bg-white shadow-sm rounded-3">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fas fa-cogs fs-2 me-3 text-primary"></i>
+                            <h2 class="h3 mb-0 text-primary">Expertise</h2>
+                        </div>
+                        <div class="ps-5">
+                            <div class="row g-3">
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-route text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Intelligent Transportation</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-wifi text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">IoT</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-train text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Railway System</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-brain text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">AI</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-robot text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Robotics</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-bolt text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Power</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-eye text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Computer Vision</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-sliders-h text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Control</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-wave-square text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Signal Processing</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-gavel text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Public Policy</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="expertise-item p-3 text-center bg-light rounded-3 h-100">
+                                        <i class="fas fa-calculator text-primary mb-2 d-block"></i>
+                                        <span class="fw-medium">Computational Mathematics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+
+    <!-- Load JavaScript dalam urutan yang sama dengan index.html -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS jika diperlukan
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

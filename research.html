@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - CoE STAR</title>
+    
+    <!-- Load CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .main-content {
+            padding: 2rem 0;
+            margin-top: 80px;
+            width: 100%;
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            border-bottom: none;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .research-project {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .research-project:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .research-project h4 {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        .research-project .text-muted {
+            font-size: 0.9rem;
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-card.tech {
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .category-card.science {
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .category-card.social {
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .category-card .card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card.tech .card-title {
+            color: var(--primary-color);
+        }
+        
+        .category-card.science .card-title {
+            color: var(--success-color);
+        }
+        
+        .category-card.social .card-title {
+            color: var(--warning-color);
+        }
+        
+        .btn-outline-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            margin: 1.5rem 0;
+        }
+        
+        /* Research project icons */
+        .research-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-right: 1rem;
+        }
+        
+        .research-icon.ai { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .research-icon.iot { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .research-icon.robotics { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .research-icon.transport { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                margin-top: 70px;
+                padding: 1rem 0;
+            }
+            
+            .container-fluid {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header"></div>
+    
+    <div class="main-content">
+        <div class="container-fluid px-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow-sm my-4">
+                        <div class="card-header">
+                            <h2><i class="fas fa-microscope me-2"></i>Research</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h3><i class="fas fa-flask me-2"></i>Recent Research Projects</h3>
+                                <hr>
+                                
+                                <!-- Research Project 1 -->
+                                <div class="research-project mb-3 p-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="research-icon ai">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h4>AI-Powered Traffic Management System</h4>
+                                            <p class="text-muted"><i class="fas fa-calendar me-1"></i>Published: March 15, 2024</p>
+                                            <p>Development of an intelligent traffic management system using machine learning algorithms to optimize traffic flow in urban areas. The system utilizes real-time data from IoT sensors and cameras to predict and prevent traffic congestion.</p>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-book-open me-1"></i>Read More
+                                                </a>
+                                                <span class="badge bg-primary">AI</span>
+                                                <span class="badge bg-success">Transportation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Research Project 2 -->
+                                <div class="research-project mb-3 p-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="research-icon iot">
+                                            <i class="fas fa-wifi"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h4>IoT-Based Smart Railway Monitoring</h4>
+                                            <p class="text-muted"><i class="fas fa-calendar me-1"></i>Published: February 28, 2024</p>
+                                            <p>Implementation of Internet of Things technology for real-time monitoring of railway infrastructure. This research focuses on predictive maintenance and safety enhancement through continuous sensor data analysis.</p>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-book-open me-1"></i>Read More
+                                                </a>
+                                                <span class="badge bg-info">IoT</span>
+                                                <span class="badge bg-warning text-dark">Railway</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Research Project 3 -->
+                                <div class="research-project mb-3 p-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="research-icon robotics">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h4>Autonomous Robot Navigation in Dynamic Environments</h4>
+                                            <p class="text-muted"><i class="fas fa-calendar me-1"></i>Published: January 20, 2024</p>
+                                            <p>Research on developing advanced navigation algorithms for autonomous robots operating in dynamic and unpredictable environments. The study includes obstacle avoidance, path planning, and real-time decision making.</p>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-book-open me-1"></i>Read More
+                                                </a>
+                                                <span class="badge bg-secondary">Robotics</span>
+                                                <span class="badge bg-primary">AI</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Research Project 4 -->
+                                <div class="research-project mb-3 p-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="research-icon transport">
+                                            <i class="fas fa-route"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h4>Smart Transportation Energy Optimization</h4>
+                                            <p class="text-muted"><i class="fas fa-calendar me-1"></i>Published: December 10, 2023</p>
+                                            <p>Investigation of energy-efficient transportation systems using renewable energy sources and smart grid integration. Focus on reducing carbon footprint and operational costs in public transportation.</p>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-book-open me-1"></i>Read More
+                                                </a>
+                                                <span class="badge bg-success">Energy</span>
+                                                <span class="badge bg-warning text-dark">Sustainability</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-5">
+                                <h3><i class="fas fa-layer-group me-2"></i>Research Categories</h3>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card category-card tech h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="fas fa-microchip fa-2x text-primary me-3"></i>
+                                                    <h5 class="card-title mb-0">Technology</h5>
+                                                </div>
+                                                <p class="card-text">Explore our technology-focused research including AI, machine learning, IoT, and advanced computing systems.</p>
+                                                <div class="mt-3">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-project-diagram me-1"></i>12 Active Projects
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card category-card science h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="fas fa-atom fa-2x text-success me-3"></i>
+                                                    <h5 class="card-title mb-0">Science</h5>
+                                                </div>
+                                                <p class="card-text">Discover our scientific research projects in physics, mathematics, engineering, and interdisciplinary studies.</p>
+                                                <div class="mt-3">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-project-diagram me-1"></i>8 Active Projects
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card category-card social h-100">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="fas fa-users fa-2x text-warning me-3"></i>
+                                                    <h5 class="card-title mb-0">Social Studies</h5>
+                                                </div>
+                                                <p class="card-text">Learn about our social impact research focusing on community development and technology adoption.</p>
+                                                <div class="mt-3">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-project-diagram me-1"></i>6 Active Projects
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+
+    <!-- Load JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll for "Read More" buttons
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add your navigation logic here
+                console.log('Navigate to research details');
+            });
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

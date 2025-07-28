@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - CoE STAR</title>
+    
+    <!-- Load CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    
+    <style>
+        :root {
+            --primary-gray: #495057;
+            --secondary-gray: #6c757d;
+            --light-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --medium-gray: #adb5bd;
+            --accent-gray: #868e96;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .main-content {
+            padding: 2rem 0;
+            margin-top: 80px;
+        }
+        
+        .card {
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(73, 80, 87, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(73, 80, 87, 0.15);
+            border-color: var(--primary-gray);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-gray), var(--dark-gray));
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: none;
+        }
+        
+        .card-body h1 {
+            color: var(--dark-gray);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .card-body h3 {
+            color: var(--primary-gray);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .card-body h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-gray), var(--secondary-gray));
+            border-radius: 2px;
+        }
+        
+        .card-body p {
+            color: var(--secondary-gray);
+            line-height: 1.6;
+        }
+        
+        .list-group-item {
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            border-radius: 8px !important;
+        }
+        
+        .list-group-item:hover {
+            background-color: var(--light-gray);
+            border-color: var(--primary-gray);
+            transform: translateX(5px);
+        }
+        
+        .list-group-item h5 {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        .list-group-item p {
+            color: var(--secondary-gray);
+        }
+        
+        .list-group-item small {
+            color: var(--medium-gray);
+        }
+        
+        .form-label {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            border: 2px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-gray);
+            box-shadow: 0 0 0 0.2rem rgba(73, 80, 87, 0.25);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gray), var(--dark-gray));
+            border: none;
+            padding: 10px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--dark-gray), var(--primary-gray));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 80, 87, 0.3);
+        }
+        
+        .community-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .join-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .post-meta {
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--secondary-gray);
+        }
+        
+        .welcome-section {
+            background: linear-gradient(135deg, var(--light-gray), #f8f9fa);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-gray);
+        }
+        
+        .post-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .post-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(73, 80, 87, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .post-item:hover::before {
+            left: 100%;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-content {
+                margin-top: 70px;
+                padding: 1rem 0;
+            }
+            
+            .card-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header"></div>
+    
+    <div class="main-content">
+        <div class="container-fluid px-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="fas fa-users me-2"></i>
+                            Community
+                        </div>
+                        
+                        <div class="card-body">
+                            <!-- Welcome Section -->
+                            <div class="welcome-section">
+                                <h1><i class="fas fa-heart text-danger me-2"></i>Welcome to Our Community</h1>
+                                <p class="mb-0">Join our vibrant community of researchers, students, and professionals passionate about smart transportation and robotics. Share knowledge, collaborate on projects, and stay updated with the latest developments in our field.</p>
+                            </div>
+                            
+                            <div class="row">
+                                <!-- Community Content -->
+                                <div class="col-lg-8">
+                                    <div class="community-content community-section">
+                                        <h3><i class="fas fa-newspaper me-2"></i>Recent Posts</h3>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action post-item">
+                                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-2">
+                                                            <i class="fas fa-robot me-2 text-primary"></i>
+                                                            Latest Advances in Autonomous Railway Systems
+                                                        </h5>
+                                                        <p class="mb-2">Discover the cutting-edge technologies being implemented in modern railway automation and their impact on transportation efficiency.</p>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <small class="text-muted">
+                                                                <i class="fas fa-user me-1"></i>Dr. Ahmad Sugiana
+                                                            </small>
+                                                            <span class="post-meta">3 days ago</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            
+                                            <a href="#" class="list-group-item list-group-item-action post-item">
+                                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-2">
+                                                            <i class="fas fa-cogs me-2 text-success"></i>
+                                                            IoT Integration in Smart Transportation
+                                                        </h5>
+                                                        <p class="mb-2">Exploring how Internet of Things technology is revolutionizing transportation systems and creating smarter, more connected infrastructure.</p>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <small class="text-muted">
+                                                                <i class="fas fa-user me-1"></i>Research Team
+                                                            </small>
+                                                            <span class="post-meta">5 days ago</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            
+                                            <a href="#" class="list-group-item list-group-item-action post-item">
+                                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-2">
+                                                            <i class="fas fa-brain me-2 text-info"></i>
+                                                            AI-Powered Traffic Management Solutions
+                                                        </h5>
+                                                        <p class="mb-2">Learn about artificial intelligence applications in traffic optimization and their role in creating more efficient urban transportation networks.</p>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <small class="text-muted">
+                                                                <i class="fas fa-user me-1"></i>Community Member
+                                                            </small>
+                                                            <span class="post-meta">1 week ago</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            
+                                            <a href="#" class="list-group-item list-group-item-action post-item">
+                                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-2">
+                                                            <i class="fas fa-graduation-cap me-2 text-warning"></i>
+                                                            Research Collaboration Opportunities
+                                                        </h5>
+                                                        <p class="mb-2">Looking for research partners in machine learning applications for autonomous systems. Multiple projects available for collaboration.</p>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <small class="text-muted">
+                                                                <i class="fas fa-user me-1"></i>Prof. Sarah Johnson
+                                                            </small>
+                                                            <span class="post-meta">2 weeks ago</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            
+                                            <a href="#" class="list-group-item list-group-item-action post-item">
+                                                <div class="d-flex w-100 justify-content-between align-items-start">
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-2">
+                                                            <i class="fas fa-calendar-alt me-2 text-danger"></i>
+                                                            Upcoming Workshop: Smart City Technologies
+                                                        </h5>
+                                                        <p class="mb-2">Join us for an intensive workshop on implementing smart city technologies. Registration now open for all community members.</p>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <small class="text-muted">
+                                                                <i class="fas fa-user me-1"></i>Event Organizer
+                                                            </small>
+                                                            <span class="post-meta">3 weeks ago</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Join Community Form -->
+                                <div class="col-lg-4">
+                                    <div class="join-community join-section">
+                                        <h3><i class="fas fa-user-plus me-2"></i>Join Our Community</h3>
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">
+                                                    <i class="fas fa-user me-1"></i>Name
+                                                </label>
+                                                <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">
+                                                    <i class="fas fa-envelope me-1"></i>Email Address
+                                                </label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="interest" class="form-label">
+                                                    <i class="fas fa-heart me-1"></i>Area of Interest
+                                                </label>
+                                                <select class="form-control" id="interest">
+                                                    <option value="">Select your area of interest</option>
+                                                    <option value="robotics">Robotics</option>
+                                                    <option value="ai">Artificial Intelligence</option>
+                                                    <option value="iot">Internet of Things</option>
+                                                    <option value="transportation">Smart Transportation</option>
+                                                    <option value="railway">Railway Systems</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary w-100">
+                                                <i class="fas fa-rocket me-2"></i>Join Now
+                                            </button>
+                                        </form>
+                                        
+                                        <div class="mt-4">
+                                            <h6 class="text-muted mb-3">Community Benefits:</h6>
+                                            <ul class="list-unstyled">
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Access to research papers</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Networking opportunities</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Workshop invitations</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Project collaborations</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monthly newsletters</li>
+                                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exclusive webinars</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+
+    <!-- Load JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const interest = document.getElementById('interest').value;
+            
+            if (name && email && interest) {
+                alert('Thank you for joining our community! We will contact you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
